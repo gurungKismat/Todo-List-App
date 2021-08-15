@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Todo List</string>
+    <string name="textview">TextView</string>
+    <string name="floating_button">floating button</string>
+    <string name="enter_task_hint">Enter task</string>
+    <string name="delete_menu">delete_menu</string>
+    <string name="delete_all_notes">Delete all Notes</string>
+    <string name="delte_task">delte_task</string>
+</resources>
