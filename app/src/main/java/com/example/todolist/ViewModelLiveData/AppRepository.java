@@ -2,13 +2,10 @@ package com.example.todolist.ViewModelLiveData;
 
 import android.content.Context;
 import android.util.Log;
-
 import androidx.lifecycle.LiveData;
-
 import com.example.todolist.AppExecutor;
 import com.example.todolist.database.TodoDatabase;
 import com.example.todolist.database.TodoTaskEntity;
-
 import java.util.List;
 import java.util.concurrent.Executor;
 

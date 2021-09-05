@@ -15,7 +15,7 @@ import java.util.List;
 public class MainViewmodel extends AndroidViewModel {
 
     public LiveData<List<TodoTaskEntity>>  todoTaskEntityList;
-    AppRepository appRepositoryInstance;
+    private final AppRepository appRepositoryInstance;
 
     public MainViewmodel(@NonNull @NotNull Application application) {
         super(application);

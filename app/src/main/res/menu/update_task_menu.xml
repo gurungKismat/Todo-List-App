@@ -4,9 +4,16 @@
 
     <item android:id="@+id/delete_single_task"
         android:title="@string/delte_task"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:icon="@drawable/ic_baseline_delete_24"
         app:showAsAction="always">
     </item>
+
+    <item android:id="@+id/upload_thumbnail"
+        android:title="@string/upload_image_title"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom">
+    </item>
+
 
 </menu>

@@ -6,6 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+
 @Database(entities = {TodoTaskEntity.class},version = 1,exportSchema = false)
 public abstract class TodoDatabase extends RoomDatabase {
 
@@ -22,7 +23,7 @@ public abstract class TodoDatabase extends RoomDatabase {
             synchronized (TodoDatabase.class) {
                 // double checking if database instance is already initialized or not to make it thread safe
                 if (dbInstance == null) {
-                    // using database builder to build dabase instance
+                    // using database builder to build database instance
                     dbInstance = Room.databaseBuilder(context,TodoDatabase.class,DATABASE_NAME).build();
                 }
             }

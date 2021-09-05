@@ -6,4 +6,12 @@
     <string name="delete_menu">delete_menu</string>
     <string name="delete_all_notes">Delete all Notes</string>
     <string name="delte_task">delte_task</string>
+    <string name="default_thumbnail">default pic</string>
+    <string name="upload_image_title">Upload Thumbnail</string>
+    <string name="demo_img">TODO</string>
+    <string name="enter_task">Enter task</string>
+    <string name="default_img">TODO</string>
+    <string name="check_spelling">Check Spelling</string>
+    <string name="todo">TODO</string>
+    <string name="suggested_word">Suggested Words: </string>
 </resources>

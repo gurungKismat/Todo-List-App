@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity  implements RecyclerAdapter.DeleteTask {
+public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerAdapter adapter;
@@ -35,12 +35,15 @@ public class MainActivity extends AppCompatActivity  implements RecyclerAdapter.
     private List<TodoTaskEntity> taskEntities = new ArrayList<>();
     private MainViewmodel mainViewmodel;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Log.d("task", "onCreate called");
+
 
         initViewModel();
         initRecyclerView();
@@ -57,12 +60,13 @@ public class MainActivity extends AppCompatActivity  implements RecyclerAdapter.
 
                 taskEntities = todoTaskEntities;
 
+                // check if data is displaying in recycler view for the first time or not
                 if (adapter == null) {
-                    Log.d("task","Initializing data in adapter for first time...");
-                    adapter = new RecyclerAdapter(MainActivity.this,taskEntities, MainActivity.this);
+                    Log.d("task", "Initializing data in adapter for first time...");
+                    adapter = new RecyclerAdapter(MainActivity.this, taskEntities);
                     recyclerView.setAdapter(adapter);
-                }else {
-                    Log.d("task","Notifying about data changed to adapter...");
+                } else {
+                    Log.d("task", "Notifying about data changed to adapter...");
                     adapter.setList(taskEntities);
 
                 }
@@ -77,9 +81,11 @@ public class MainActivity extends AppCompatActivity  implements RecyclerAdapter.
         recyclerView.hasFixedSize();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
 
+
+        // notes will be deleted if the user swipe it to left or right direction
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull @NotNull RecyclerView recyclerView, @NonNull @NotNull RecyclerView.ViewHolder viewHolder, @NonNull @NotNull RecyclerView.ViewHolder target) {
@@ -120,12 +126,6 @@ public class MainActivity extends AppCompatActivity  implements RecyclerAdapter.
         });
     }
 
-
-// implementation of interface which is located in Recycler adapter class
-    @Override
-    public void deleteTask(List<TodoTaskEntity> checkedTaskList) {
-
-    }
 
     // Inflating menu in main activity
     @Override
