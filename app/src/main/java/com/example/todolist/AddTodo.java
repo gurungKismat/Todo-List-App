@@ -235,7 +235,7 @@ public class AddTodo extends AppCompatActivity {
 //             Log.d("tag","items length "+items);
              countItems = 0;
 
-            progressDialog = ProgressDialog.show(this,"title","message",true);
+            progressDialog = ProgressDialog.show(this,"Checking Spelling","Loading...",true);
 
             for (String singleValue : words) {
                 Intent intent = new Intent(this, MyIntentService.class);
